@@ -1,3 +1,4 @@
+import css from 'rollup-plugin-css-only';
 import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
 
@@ -9,6 +10,7 @@ export default {
         format: 'umd',
     },
     plugins: [
+        css({ output: 'dist/style.css' }),
         babel({
             exclude: 'node_modules/**',
         }),
