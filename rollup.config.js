@@ -4,7 +4,7 @@ import { uglify } from 'rollup-plugin-uglify';
 export default {
     input: 'src/index.js',
     output: {
-        name: 'modaly',
+        name: 'Modaly',
         file: 'dist/modaly.min.js',
         format: 'umd',
     },
