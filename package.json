@@ -8,7 +8,8 @@
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
         "test": "jest",
         "test:watch": "jest --watch",
-        "build": "rollup -c"
+        "build": "rollup -c",
+        "build:watch": "rollup -c --watch"
     },
     "husky": {
         "hooks": {
@@ -48,8 +49,11 @@
         "lint-staged": "^9.2.1",
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
+        "puppeteer": "^1.19.0",
         "rollup": "^1.17.0",
         "rollup-plugin-babel": "^4.3.3",
+        "rollup-plugin-bundle-size": "^1.0.3",
+        "rollup-plugin-css-only": "^1.0.0",
         "rollup-plugin-uglify": "^6.0.2"
     }
 }
