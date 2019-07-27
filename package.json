@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "lint": "eslint **/*.js",
-        "lint:fix": "prettier-eslint \"src/**/*.js\""
+        "lint:fix": "prettier-eslint \"src/**/*.js\" --write"
     },
     "husky": {
         "hooks": {
