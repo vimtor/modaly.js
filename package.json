@@ -1,0 +1,25 @@
+{
+    "name": "modaly.js",
+    "version": "1.0.0",
+    "description": "Tiny and easy javascript library for creating web modals.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/papeloto/modaly.js.git"
+    },
+    "keywords": [
+        "web",
+        "modal",
+        "lightweight",
+        "simple"
+    ],
+    "author": "Victor Navarro",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/papeloto/modaly.js/issues"
+    },
+    "homepage": "https://github.com/papeloto/modaly.js#readme"
+}
