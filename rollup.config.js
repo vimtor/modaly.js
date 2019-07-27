@@ -1,6 +1,7 @@
 import css from 'rollup-plugin-css-only';
 import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
+import bundleSize from 'rollup-plugin-bundle-size';
 
 export default {
     input: 'src/index.js',
@@ -15,5 +16,6 @@ export default {
             exclude: 'node_modules/**',
         }),
         process.env.NODE_ENV === 'production' && uglify(),
+        bundleSize(),
     ],
 };
