@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "lint": "eslint **/*.js",
-        "lint:fix": "prettier-eslint \"src/**/*.js\" --write"
+        "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
+        "build": "rollup -c"
     },
     "husky": {
         "hooks": {
@@ -41,6 +42,7 @@
         "husky": "^3.0.1",
         "lint-staged": "^9.2.1",
         "prettier-eslint": "^9.0.0",
-        "prettier-eslint-cli": "^5.0.0"
+        "prettier-eslint-cli": "^5.0.0",
+        "rollup": "^1.17.0"
     }
 }
