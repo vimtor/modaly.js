@@ -6,6 +6,8 @@
     "scripts": {
         "lint": "eslint **/*.js",
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
+        "test": "jest",
+        "test:watch": "jest --watch",
         "build": "rollup -c"
     },
     "husky": {
@@ -42,6 +44,7 @@
         "eslint-config-airbnb-base": "^13.2.0",
         "eslint-plugin-import": "^2.18.2",
         "husky": "^3.0.1",
+        "jest": "^24.8.0",
         "lint-staged": "^9.2.1",
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
