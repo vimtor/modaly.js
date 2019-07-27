@@ -4,7 +4,8 @@
     "description": "Tiny and easy javascript library for creating web modals.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "lint": "eslint **/*.js",
+        "lint:fix": "prettier-eslint \"src/**/*.js\""
     },
     "repository": {
         "type": "git",
@@ -21,5 +22,12 @@
     "bugs": {
         "url": "https://github.com/papeloto/modaly.js/issues"
     },
-    "homepage": "https://github.com/papeloto/modaly.js#readme"
+    "homepage": "https://github.com/papeloto/modaly.js#readme",
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.2.0",
+        "eslint-plugin-import": "^2.18.2",
+        "prettier-eslint": "^9.0.0",
+        "prettier-eslint-cli": "^5.0.0"
+    }
 }
