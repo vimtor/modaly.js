@@ -1,6 +1,6 @@
 import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 import bundleSize from 'rollup-plugin-bundle-size';
 import cssnano from 'cssnano';
 
@@ -26,7 +26,7 @@ export default {
         babel({
             exclude: ['node_modules/**', 'tests/**'],
         }),
-        uglify(),
+        terser(),
         bundleSize(),
     ],
 };
