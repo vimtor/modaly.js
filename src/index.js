@@ -2,7 +2,7 @@ import './style.css';
 
 export default class Modaly {
     constructor(selector, options) {
-        const settings = Object.assign({}, { escape: true }, options);
+        const settings = Object.assign({}, { escape: true, overlay: true }, options);
 
         this.wrapper = document.querySelector(selector);
         this.wrapper.classList.add('modaly-wrapper');
@@ -25,6 +25,13 @@ export default class Modaly {
                 if (key === 'Escape' || key === 'Esc' || key === 27) {
                     this.hide();
                 }
+            });
+        }
+
+        // Bind overlay click with modal closing.
+        if (settings.overlay) {
+            this.wrapper.addEventListener('click', () => {
+                this.hide();
             });
         }
     }
