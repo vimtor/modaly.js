@@ -4,6 +4,7 @@
         "es6": true
     },
     "extends": ["airbnb-base"],
+    "plugins": ["cypress"],
     "rules": {
         "indent": ["error", 4]
     }
