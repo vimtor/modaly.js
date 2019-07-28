@@ -12,6 +12,8 @@ export default class Modaly {
 
         const closeTriggers = this.wrapper.querySelectorAll('[data-modaly-close]');
         closeTriggers.forEach(trigger => trigger.addEventListener('click', () => this.hide()));
+
+        // Test travis ci.
     }
 
     show() {
