@@ -4,8 +4,6 @@ import { uglify } from 'rollup-plugin-uglify';
 import bundleSize from 'rollup-plugin-bundle-size';
 import cssnano from 'cssnano';
 
-const production = process.env.NODE_ENV === 'production';
-
 export default {
     input: 'src/index.js',
     output: [
@@ -22,13 +20,13 @@ export default {
     ],
     plugins: [
         postcss({
-            plugins: [production && cssnano()],
+            plugins: [cssnano()],
             extensions: ['.css'],
         }),
         babel({
-            exclude: 'node_modules/**',
+            exclude: ['node_modules/**', 'tests/**'],
         }),
-        production && uglify(),
+        uglify(),
         bundleSize(),
     ],
 };
