@@ -3,9 +3,16 @@ language: node_js
 node_js:
     - node
 
+addons:
+    apt:
+        packages:
+            - libgconf-2-4
+
 cache:
     directories:
         - node_modules
+        - ~/.npm
+        - ~/.cache
 
 script:
     - npm run lint
