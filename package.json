@@ -10,7 +10,7 @@
         "server:open": "reload -b -d tests/example --port 5000",
         "test:run": "cypress run",
         "test:open": "cypress open",
-        "test": "run-p server test:run",
+        "test": "server-test server 5000 test:run",
         "build": "rollup -c",
         "build:watch": "rollup -c --watch",
         "dev": "run-p build:watch server:open test:open"
@@ -61,6 +61,7 @@
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-bundle-size": "^1.0.3",
         "rollup-plugin-postcss": "^2.0.3",
-        "rollup-plugin-uglify": "^6.0.2"
+        "rollup-plugin-uglify": "^6.0.2",
+        "start-server-and-test": "^1.9.1"
     }
 }

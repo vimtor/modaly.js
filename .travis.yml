@@ -18,7 +18,6 @@ script:
     - npm run lint
     - npm run build
     - npm test
-    - kill $(jobs -p) || true
 
 notifications:
     email: false
