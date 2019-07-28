@@ -25,12 +25,16 @@
 
             new Modaly("#modal", {
                 onShow: (modal, trigger) => {
-                    tester.dataset.modal = modal.id;
-                    tester.dataset.trigger = trigger.id;
+                    if (trigger != null) {
+                        tester.dataset.modal = modal.id;
+                        tester.dataset.trigger = trigger.id;
+                    }
                 },
                 onHide: (modal, trigger) => {
-                    tester.dataset.modal = modal.id;
-                    tester.dataset.trigger = trigger.id;
+                    if (trigger != null) {
+                        tester.dataset.modal = modal.id;
+                        tester.dataset.trigger = trigger.id;
+                    }
                 }
             });
         </script>
