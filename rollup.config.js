@@ -1,4 +1,4 @@
-import css from 'rollup-plugin-css-only';
+import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
 import bundleSize from 'rollup-plugin-bundle-size';
@@ -11,7 +11,9 @@ export default {
         format: 'umd',
     },
     plugins: [
-        css({ output: 'dist/style.css' }),
+        postcss({
+            extensions: ['.css'],
+        }),
         babel({
             exclude: 'node_modules/**',
         }),
