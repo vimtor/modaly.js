@@ -8,11 +8,18 @@ const production = process.env.NODE_ENV === 'production';
 
 export default {
     input: 'src/index.js',
-    output: {
-        name: 'Modaly',
-        file: 'dist/modaly.min.js',
-        format: 'umd',
-    },
+    output: [
+        {
+            name: 'Modaly',
+            file: 'dist/modaly.min.js',
+            format: 'umd',
+        },
+        {
+            name: 'Modaly',
+            file: 'test/example/modaly.min.js',
+            format: 'umd',
+        },
+    ],
     plugins: [
         postcss({
             plugins: [production && cssnano()],
