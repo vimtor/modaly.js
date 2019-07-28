@@ -8,18 +8,31 @@
     </head>
     <body>
         <div id="modal">
-            <button data-modaly-close>
+            <button id="close-trigger" data-modaly-close>
                 Close Modal
             </button>
         </div>
 
-        <button data-modaly-open="#modal">
+        <button id="open-trigger" data-modaly-open="#modal">
             Open Modal
         </button>
 
+        <div id="tester"></div>
+
         <script src="modaly.min.js"></script>
         <script>
-            new Modaly("#modal");
+            const tester = document.querySelector("#tester");
+
+            new Modaly("#modal", {
+                onShow: (modal, trigger) => {
+                    tester.dataset.modal = modal.id;
+                    tester.dataset.trigger = trigger.id;
+                },
+                onHide: (modal, trigger) => {
+                    tester.dataset.modal = modal.id;
+                    tester.dataset.trigger = trigger.id;
+                }
+            });
         </script>
     </body>
 </html>
