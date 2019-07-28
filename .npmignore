@@ -1,0 +1,11 @@
+docs
+src
+tests
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.json
+.prettierignore
+.travis.yml
+cypress.json
+rollup.config.js
