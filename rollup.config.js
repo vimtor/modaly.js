@@ -16,7 +16,7 @@ export default {
         },
         {
             name: 'Modaly',
-            file: 'test/example/modaly.min.js',
+            file: 'tests/example/modaly.min.js',
             format: 'umd',
         },
     ],
