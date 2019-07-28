@@ -2,6 +2,9 @@ import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
 import bundleSize from 'rollup-plugin-bundle-size';
+import cssnano from 'cssnano';
+
+const production = process.env.NODE_ENV === 'production';
 
 export default {
     input: 'src/index.js',
@@ -12,12 +15,13 @@ export default {
     },
     plugins: [
         postcss({
+            plugins: [production && cssnano()],
             extensions: ['.css'],
         }),
         babel({
             exclude: 'node_modules/**',
         }),
-        process.env.NODE_ENV === 'production' && uglify(),
+        production && uglify(),
         bundleSize(),
     ],
 };
