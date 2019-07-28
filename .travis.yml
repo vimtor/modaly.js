@@ -1,5 +1,4 @@
 language: node_js
-
 node_js:
     - node
 
@@ -10,9 +9,8 @@ addons:
 
 cache:
     directories:
-        - node_modules
-        - ~/.npm
-        - ~/.cache
+        - "~/.npm"
+        - "~/.cache"
 
 script:
     - npm run lint
@@ -21,3 +19,12 @@ script:
 
 notifications:
     email: false
+
+deploy:
+    provider: npm
+    email: vn4varro@gmail.com
+    api_key:
+        secure: oCesCC+5j5AmeYV2KpokblJ2DTsPFk1c1r3qVbeSixEEjXlkSgAd7bViNJ+ASVgEnduu7XPA9Rtr3N/keBMSJCEHu8UOhv4dw8GBc9GL1MTWXiCQIPEZY1wRaGy5ovKB4HLUzAK/h4Nt0de6Gy7f8ScUxpMHQ2zwizLltrs0QbT44TA8/Y+tZf7hsu6h4A8a66W3qz6AmLV3caEoYYByvcNKrPjPs/jNDBdFrMfnhz9xHAlN56HYnz3Nr/bQWzQuPU0YMI4B45G5tCfi1wtHz3WDdFy2hM2ZqAdAl9iIAlLtc7jQ+Hv4U4T1FUDcVGS/6yjjHlIGfPq8s8+9nCOOgjVkcpoiNLddA7mc5EQMeBtu86wDY7CmBra7u+qVgUdmizVEu+uCdCAVe0NQH/+I+GL6xvDpWwqy3Cu85dEh/j7AG5irO649px7DbuxWbkQP7dca1TLkBcMTECrNVJa3cq9n1lnbyYpYujCZ76tGwBZwOW69RT4zz77Kxr5kQnTZfQIeTdi/RjPm4KoMppzx1rDvGW2XnFMaMV/7+Z5M4iXjsnmS8+8Pyo9tyPQxG5tIZsMD6cIpHqY5LyqSYfd7EyRBtU8iLNrmtdG6BkHLfVefKiXy6yxMF9NX2lUjV/44GApg3s/gKXqeNYf1nKc1gjWYcipW75TF5w2dw4dhH7A=
+    on:
+        tags: true
+        repo: papeloto/modaly.js
