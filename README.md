@@ -1,8 +1,10 @@
-[![Build Status](https://travis-ci.org/papeloto/modaly.js.svg?branch=master)](https://travis-ci.org/papeloto/modaly.js)
-
 # modaly.js
 
+[![Build Status](https://travis-ci.org/papeloto/modaly.js.svg?branch=master)](https://travis-ci.org/papeloto/modaly.js)
+
 Tiny and easy javascript library for creating web modals.
+
+
 
 ## Install
 NPM
@@ -15,7 +17,7 @@ CDN
 <script src="https://unpkg.com/modaly.js"></script>
 ```
 
-Alternatively, you can [download distribution files directly](https://github.com/papeloto/modaly.js/tree/master/dist).
+Alternatively, you can [download](https://github.com/papeloto/modaly.js/tree/master/dist) distribution files directly.
 
 ## Usage
 
@@ -87,6 +89,8 @@ new Modaly("#modal-custom", {
 });
 ```
 
+<br/>
+
 | Option     | Default   | Description                                     |
 | ---------- | --------- | ----------------------------------------------- |
 | background | "black"   | Modal overlay color                             |
@@ -96,13 +100,15 @@ new Modaly("#modal-custom", {
 | escape     | true      | If the modal can be closed using the `ESC` key  |
 | overlay    | true      | If the modal can be closed clicking the overaly |
 
+<br/>
+
 ## Callbacks
-### `onShow(modal, trigger)`
+#### `onShow(modal, trigger)`
 Fired when the modal it is about to open.
 - `modal`: the modal DOM element.
 - `trigger`: which DOM element openned the modal. `null` if no DOM element triggered it.
 
-### `onHide(modal, trigger)`
+#### `onHide(modal, trigger)`
 Fired when the modal it is about to close.
 - `modal`: the modal DOM element.
 - `trigger`: which DOM element closed the modal. `null` if no DOM element triggered it.
