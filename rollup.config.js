@@ -6,11 +6,21 @@ import cssnano from 'cssnano';
 
 export default {
     input: 'src/index.js',
-    output: {
-        name: 'Modaly',
-        file: 'dist/modaly.min.js',
-        format: 'umd',
-    },
+    output: [
+        {
+            name: 'Modaly',
+            file: 'dist/modaly.min.js',
+            format: 'iife',
+        },
+        {
+            file: 'dist/modaly.cjs.js',
+            format: 'cjs',
+        },
+        {
+            file: 'dist/modaly.esm.js',
+            format: 'esm',
+        },
+    ],
     plugins: [
         postcss({
             plugins: [cssnano()],

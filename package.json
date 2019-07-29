@@ -2,7 +2,10 @@
     "name": "modaly.js",
     "version": "0.2.1",
     "description": "Tiny and easy javascript library for creating web modals.",
-    "main": "dist/modaly.min.js",
+    "main": "dist/modaly.cjs.js",
+    "browser": "dist/modaly.min.js",
+    "module": "dist/modaly.esm.js",
+    "unpkg": "dist/modaly.min.js",
     "scripts": {
         "lint": "eslint \"./**/*.js\"",
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
