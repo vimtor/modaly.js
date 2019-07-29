@@ -13,7 +13,7 @@
         "test": "server-test server 5000 test:run",
         "build": "rollup -c",
         "build:watch": "rollup -c --watch",
-        "dev": "run-p build:watch server:open test:open"
+        "dev": "run-p server test:open"
     },
     "husky": {
         "hooks": {
