@@ -5,8 +5,17 @@ export default class Modaly {
         const settings = Object.assign(
             {},
             {
+                // Style
+                background: 'black',
+                opacity: 0.75,
+                duration: 250,
+                animation: 'ease-in',
+
+                // Navigation
                 escape: true,
                 overlay: true,
+
+                // Callbacks
                 onShow: null,
                 onHide: null,
             },
@@ -17,6 +26,18 @@ export default class Modaly {
         this.wrapper.classList.add('modaly-wrapper');
         this.hide();
 
+        // Set animation duration to zero if opacity is 0.
+        if (settings.opacity === 0) {
+            settings.duration = 0;
+        }
+
+        // Setup style properties.
+        this.wrapper.style.setProperty('--background', settings.background);
+        this.wrapper.style.setProperty('--duration', `${settings.duration}ms`);
+        this.wrapper.style.setProperty('--animation', settings.animation);
+        this.wrapper.style.setProperty('--opacity', settings.opacity);
+
+        // Bind callbacks.
         this.showCallback = settings.onShow;
         this.hideCallback = settings.onHide;
 

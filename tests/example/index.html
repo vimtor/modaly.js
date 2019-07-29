@@ -13,8 +13,18 @@
             </button>
         </div>
 
+        <div id="modal-custom">
+            <button data-modaly-close>
+                Close Modal
+            </button>
+        </div>
+
         <button id="open-trigger" data-modaly-open="#modal">
             Open Modal
+        </button>
+
+        <button data-modaly-open="#modal-custom">
+            Open Custom Modal
         </button>
 
         <div id="tester"></div>
@@ -36,6 +46,15 @@
                         tester.dataset.trigger = trigger.id;
                     }
                 }
+            });
+
+            new Modaly("#modal-custom", {
+                escape: false,
+                overlay: false,
+                background: "red",
+                opacity: 0.5,
+                duration: 500,
+                animation: "ease-out"
             });
         </script>
     </body>
