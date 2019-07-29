@@ -6,8 +6,8 @@
     "scripts": {
         "lint": "eslint \"./**/*.js\"",
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
-        "server": "reload -d tests/example --port 5000",
-        "server:open": "reload -b -d tests/example --port 5000",
+        "server": "reload -d src --port 5000",
+        "server:open": "reload -b -d src --port 5000",
         "test:run": "cypress run",
         "test:open": "cypress open",
         "test": "server-test server 5000 test:run",
