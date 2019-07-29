@@ -16,11 +16,13 @@ export default class Modaly {
                 // Callbacks
                 onShow: null,
                 onHide: null,
+
+                document,
             },
             options,
         );
 
-        this.wrapper = document.querySelector(selector);
+        this.wrapper = settings.document.querySelector(selector);
         this.wrapper.classList.add('modaly-wrapper');
         this.hide();
 
@@ -40,7 +42,7 @@ export default class Modaly {
         this.hideCallback = settings.onHide;
 
         // Bind every open trigger.
-        const openTriggers = document.querySelectorAll(`[data-modaly-open='${selector}']`);
+        const openTriggers = settings.document.querySelectorAll(`[data-modaly-open='${selector}']`);
         openTriggers.forEach(trigger => trigger.addEventListener('click', () => this.show(trigger)));
 
         // Bind every open trigger.
@@ -54,7 +56,7 @@ export default class Modaly {
 
         // Bind ESC key with modal closing.
         if (settings.escape) {
-            document.addEventListener('keyup', (event) => {
+            settings.document.addEventListener('keyup', (event) => {
                 if (event.defaultPrevented) return;
 
                 const key = event.key || event.keyCode;

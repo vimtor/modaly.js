@@ -1,7 +1,12 @@
+/// <reference types="cypress" />
+
+import Modaly from '../../src/modaly';
+
 describe('modal user interface default features', () => {
     before(() => {
-        cy.visit('/');
-        cy.wait(100);
+        cy.visit('/').then((contentWindow) => {
+            new Modaly('#modal', { document: contentWindow.document });
+        });
     });
 
     const modal = '#modal';
@@ -14,7 +19,7 @@ describe('modal user interface default features', () => {
 
     it('is visible after clicking the button', () => {
         cy.get(openTrigger).click();
-        cy.get('#modal').should('be.visible');
+        cy.get(modal).should('be.visible');
     });
 
     it('is invisible again after clicking the close button', () => {
@@ -22,6 +27,6 @@ describe('modal user interface default features', () => {
             .children(closeTrigger)
             .click();
 
-        cy.get('#modal').should('be.not.visible');
+        cy.get(modal).should('be.not.visible');
     });
 });

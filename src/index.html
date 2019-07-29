@@ -5,59 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <title>Test Enviroment</title>
-
         <link rel="stylesheet" href="style.css" />
-        <script type="module">
-            import Modaly from "./modaly.js";
-
-            const tester = document.querySelector("#tester");
-
-            new Modaly("#modal", {
-                onShow: (modal, trigger) => {
-                    if (trigger != null) {
-                        tester.dataset.modal = modal.id;
-                        tester.dataset.trigger = trigger.id;
-                    }
-                },
-                onHide: (modal, trigger) => {
-                    if (trigger != null) {
-                        tester.dataset.modal = modal.id;
-                        tester.dataset.trigger = trigger.id;
-                    }
-                }
-            });
-
-            new Modaly("#modal-custom", {
-                escape: false,
-                overlay: false,
-                background: "red",
-                opacity: 0.5,
-                duration: 500,
-                animation: "ease-out"
-            });
-        </script>
     </head>
     <body>
         <div id="modal">
-            <button id="close-trigger" data-modaly-close>
-                Close Modal
-            </button>
-        </div>
-
-        <div id="modal-custom">
             <button data-modaly-close>
                 Close Modal
             </button>
         </div>
 
-        <button id="open-trigger" data-modaly-open="#modal">
+        <button data-modaly-open="#modal">
             Open Modal
         </button>
-
-        <button data-modaly-open="#modal-custom">
-            Open Custom Modal
-        </button>
-
-        <div id="tester"></div>
     </body>
 </html>
