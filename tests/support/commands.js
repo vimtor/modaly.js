@@ -13,3 +13,13 @@ Cypress.Commands.add(
         return unquote(before.getPropertyValue(property));
     },
 );
+
+Cypress.Commands.add(
+    'css',
+    {
+        prevSubject: 'element',
+    },
+    (el, property, value) => {
+        expect(el).to.have.css(property, value);
+    },
+);
