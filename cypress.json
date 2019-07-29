@@ -2,7 +2,7 @@
     "baseUrl": "http://localhost:5000",
     "fixturesFolder": false,
     "pluginsFile": false,
-    "supportFile": false,
+    "supportFile": "tests/support/index.js",
     "integrationFolder": "tests/integration",
     "screenshotsFolder": "tests/screenshots",
     "video": false
