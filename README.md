@@ -7,16 +7,19 @@ Tiny and easy javascript library for creating web modals.
 ## Install
 NPM
 ```sh
-npm install modaly
+npm install modaly.js
 ```
+
 CDN
 ```html
-<script src="https://unpkg.com/modaly.js@0.2.0/dist/modaly.min.js"></script>
+<script src="https://unpkg.com/modaly.js"></script>
 ```
+
+Alternatively, you can [download distribution files directly](https://github.com/papeloto/modaly.js/tree/master/dist).
 
 ## Usage
 
-The basic setup of one modal with default options is the following.
+The basic setup for one modal with default options is the following.
 
 ```html
 <div id="modal-1">
@@ -28,7 +31,7 @@ The basic setup of one modal with default options is the following.
 new Modaly("#modal-1");
 ```
 
-Then, to trigger the modal, simply add `data-modaly-open` attribute to a DOM element.
+To open the modal add the `data-modaly-open` attribute to any DOM element.
 
 ```html
 <button data-modaly-open="#modal-1">
@@ -36,7 +39,7 @@ Then, to trigger the modal, simply add `data-modaly-open` attribute to a DOM ele
 </button>
 ```
 
-To close it, you can add the `data-modaly-close` attribute to any element inside the modal.
+To close the modal add the `data-modaly-close` attribute to any element inside the modal.
 
 ```html
 <div id="modal-1">
@@ -46,7 +49,7 @@ To close it, you can add the `data-modaly-close` attribute to any element inside
 </div>
 ```
 
-The modaly class returns a reference to the modal, providing an API for custom usage. For example:
+You can open/close the modal programmatically.
 
 ```js
 const modal = new Modaly("offer-modal");
@@ -64,7 +67,8 @@ setTimeout(() => modal.hide(), 5000);
 
 ## Options
 
-You can customize further the behaviour and looks of your modals.
+You can further customize the behaviour and looks of your modals.
+
 ```js
 new Modaly("#modal-custom", {
     // Style
@@ -83,31 +87,25 @@ new Modaly("#modal-custom", {
 });
 ```
 
-### Style Options
-
-| Option     | Default     | Description                            |
-| ---------- | ----------- | -------------------------------------- |
-| background | `"black"`   | Modal overlay color                    |
-| opacity    | `0.75`      | Modal overlay opacity                  |
-| duration   | `250`       | Milliseconds the show transition lasts |
-| animation  | `"ease-in"` | Timing function for the transition     |
-
-### Navigation Options
-| Option  | Default | Description                                    |
-| ------- | ------- | ---------------------------------------------- |
-| escape  | `true`  | If the modal can be close using the `ESC` key  |
-| overlay | `true`  | If the modal can be close clicking the overaly |
+| Option     | Default   | Description                                     |
+| ---------- | --------- | ----------------------------------------------- |
+| background | "black"   | Modal overlay color                             |
+| opacity    | 0.75      | Modal overlay opacity                           |
+| duration   | 250       | Milliseconds that the transition lasts          |
+| animation  | "ease-in" | Timing function for the transition              |
+| escape     | true      | If the modal can be closed using the `ESC` key  |
+| overlay    | true      | If the modal can be closed clicking the overaly |
 
 ## Callbacks
 ### `onShow(modal, trigger)`
-Fired when the modal begins his show transition.
+Fired when the modal it is about to open.
 - `modal`: the modal DOM element.
-- `trigger`: which element openned the modal. `null` if no DOM element triggered it.
+- `trigger`: which DOM element openned the modal. `null` if no DOM element triggered it.
 
 ### `onHide(modal, trigger)`
-Fired when the modal begins his hide transition.
+Fired when the modal it is about to close.
 - `modal`: the modal DOM element.
-- `trigger`: which element openned the modal. `null` if no DOM element triggered it.
+- `trigger`: which DOM element closed the modal. `null` if no DOM element triggered it.
 
 ## Licensing
-Project created by [Victor Navarro](https://github.com/papeloto/) and licensed under MIT license.
+Created by [Victor Navarro](https://github.com/papeloto/) and licensed under [MIT](https://github.com/papeloto/modaly.js/blob/master/LICENSE) license.
