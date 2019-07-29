@@ -1,6 +1,6 @@
 {
     "name": "modaly.js",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Tiny and easy javascript library for creating web modals.",
     "main": "dist/modaly.min.js",
     "scripts": {
