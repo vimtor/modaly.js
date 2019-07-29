@@ -5,9 +5,13 @@
 Tiny and easy javascript library for creating web modals.
 
 ## Install
-
+NPM
 ```sh
 npm install modaly
+```
+CDN
+```html
+<script src="https://unpkg.com/modaly.js@0.2.0/dist/modaly.min.js"></script>
 ```
 
 ## Usage
@@ -104,3 +108,6 @@ Fired when the modal begins his show transition.
 Fired when the modal begins his hide transition.
 - `modal`: the modal DOM element.
 - `trigger`: which element openned the modal. `null` if no DOM element triggered it.
+
+## Licensing
+Project created by [Victor Navarro](https://github.com/papeloto/) and licensed under MIT license.
