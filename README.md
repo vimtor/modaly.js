@@ -57,3 +57,50 @@ const modal = new Modaly("timeout-modal");
 
 setTimeout(() => modal.hide(), 5000);
 ```
+
+## Options
+
+You can customize further the behaviour and looks of your modals.
+```js
+new Modaly("#modal-custom", {
+    // Style
+    background: "black",
+    opacity: 0.75,
+    duration: 250,
+    animation: "ease-in",
+
+    // Navigation
+    escape: true,
+    overlay: true,
+
+    // Callbacks
+    onShow: (modal, trigger) => {},
+    onHide: (modal, trigger) => {}
+});
+```
+
+### Style Options
+
+| Option     | Default     | Description                            |
+| ---------- | ----------- | -------------------------------------- |
+| background | `"black"`   | Modal overlay color                    |
+| opacity    | `0.75`      | Modal overlay opacity                  |
+| duration   | `250`       | Milliseconds the show transition lasts |
+| animation  | `"ease-in"` | Timing function for the transition     |
+
+### Navigation Options
+| Option  | Default | Description                                    |
+| ------- | ------- | ---------------------------------------------- |
+| escape  | `true`  | If the modal can be close using the `ESC` key  |
+| overlay | `true`  | If the modal can be close clicking the overaly |
+
+## Callbacks
+### `onShow(modal, trigger)`
+Fired when the modal begins his show transition.
+- `modal`: the modal DOM element.
+- `trigger`: which element openned the modal. `null` if no DOM element triggered it.
+
+### `onHide(modal, trigger)`
+Fired when the modal begins his hide transition.
+- `modal`: the modal DOM element.
+- `trigger`: which element openned the modal. `null` if no DOM element triggered it.
