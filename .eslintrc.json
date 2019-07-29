@@ -6,6 +6,7 @@
     "extends": ["airbnb-base"],
     "plugins": ["cypress"],
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "no-new": "off"
     }
 }
