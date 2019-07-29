@@ -7,6 +7,7 @@
     "plugins": ["cypress"],
     "rules": {
         "indent": ["error", 4],
-        "no-new": "off"
+        "no-new": "off",
+        "spaced-comment": "off"
     }
 }
