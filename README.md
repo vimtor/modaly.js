@@ -52,7 +52,7 @@ To close the modal add the `data-modaly-close` attribute to any element inside t
 You can open/close the modal programmatically.
 
 ```js
-const modal = new Modaly("offer-modal");
+const modal = new Modaly("#offer-modal");
 
 if (offersAvailable) {
     modal.show();
@@ -60,7 +60,7 @@ if (offersAvailable) {
 ```
 
 ```js
-const modal = new Modaly("timeout-modal");
+const modal = new Modaly("#timeout-modal");
 
 setTimeout(() => modal.hide(), 5000);
 ```
