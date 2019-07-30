@@ -89,14 +89,15 @@ new Modaly("#modal-custom", {
 
 <br/>
 
-| Option     | Default   | Description                                     |
-| ---------- | --------- | ----------------------------------------------- |
-| background | "black"   | Modal overlay color                             |
-| opacity    | 0.75      | Modal overlay opacity                           |
-| duration   | 250       | Milliseconds that the transition lasts          |
-| animation  | "ease-in" | Timing function for the transition              |
-| escape     | true      | If the modal can be closed using the `ESC` key  |
-| overlay    | true      | If the modal can be closed clicking the overaly |
+| Option     | Default   | Description                                                       |
+| ---------- | --------- | ----------------------------------------------------------------- |
+| background | "black"   | Modal overlay color                                               |
+| opacity    | 0.75      | Modal overlay opacity                                             |
+| duration   | 250       | Milliseconds that the transition lasts                            |
+| animation  | "ease-in" | Timing function for the transition                                |
+| escape     | true      | If the modal can be closed using the `ESC` key                    |
+| overlay    | true      | If the modal can be closed clicking the overaly                   |
+| accessible | true      | Setup the modal and triggers to be used by assistive technologies |
 
 <br/>
 
@@ -110,6 +111,32 @@ Fired when the modal it is about to open.
 Fired when the modal it is about to close.
 - `modal`: the modal DOM element.
 - `trigger`: which DOM element closed the modal. `null` if no DOM element triggered it.
+
+## Accessibility
+If the option `accesible` is `true`, accessibility attributes will be added to the modal and the close triggers automatically.
+
+It will change from this.
+
+```html
+<div id="modal-1">
+    <!-- modal content -->
+
+    <img src="close-icon.svg" data-modaly-close />
+</div>
+```
+
+To this.
+
+```html
+<div id="modal-1" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- modal content -->
+
+    <img src="close-icon.svg" data-modaly-close aria-label="close this dialog"/>
+</div>
+```
+
+*Disclaimer: I am by no means an expert on accessibility technologies, but if you are one, feel free to reach out for improving the library.*
+
 
 ## Licensing
 Created by [Victor Navarro](https://github.com/papeloto/) and licensed under [MIT](https://github.com/papeloto/modaly.js/blob/master/LICENSE) license.
