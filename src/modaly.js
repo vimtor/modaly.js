@@ -38,6 +38,14 @@ export default class Modaly {
         this.wrapper.style.setProperty('--animation', settings.animation);
         this.wrapper.style.setProperty('--opacity', settings.opacity);
 
+        // Add accessibility attributes.
+        this.accessibility = settings.accessibility;
+        if (this.accessibility) {
+            this.wrapper.setAttribute('role', 'dialog');
+            this.wrapper.setAttribute('aria-modal', 'true');
+            this.wrapper.setAttribute('aria-hidden', 'true');
+        }
+
         // Bind callbacks.
         this.showCallback = settings.onShow;
         this.hideCallback = settings.onHide;
@@ -48,20 +56,19 @@ export default class Modaly {
 
         // Bind every open trigger.
         const closeTriggers = this.wrapper.querySelectorAll('[data-modaly-close]');
-        closeTriggers.forEach(trigger => trigger.addEventListener('click', (event) => {
-            // To prevent overlay for triggering click.
-            event.stopPropagation();
+        closeTriggers.forEach((trigger) => {
+            // For assistive technologies.
+            if (this.accessibility) {
+                trigger.setAttribute('aria-label', 'close modal');
+            }
 
-            this.hide(trigger);
-        }));
+            trigger.addEventListener('click', (event) => {
+                // To prevent overlay for triggering click.
+                event.stopPropagation();
 
-        // Add accessibility attributes.
-        this.accessibility = settings.accessibility;
-        if (this.accessibility) {
-            this.wrapper.setAttribute('role', 'dialog');
-            this.wrapper.setAttribute('aria-modal', 'true');
-            this.wrapper.setAttribute('aria-hidden', 'true');
-        }
+                this.hide(trigger);
+            });
+        });
 
         // Bind ESC key with modal closing.
         if (settings.escape) {

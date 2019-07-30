@@ -30,4 +30,8 @@ describe('modal accesibility setup', () => {
         cy.get('#modal > [data-modaly-close]').click();
         cy.get('#modal').should('have.attr', 'aria-hidden', 'true');
     });
+
+    it("aria-label of modal close trigger equals 'close modal'", () => {
+        cy.get('#modal > [data-modaly-close]').should('have.attr', 'aria-label', 'close modal');
+    });
 });
