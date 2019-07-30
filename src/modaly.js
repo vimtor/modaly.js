@@ -59,7 +59,7 @@ export default class Modaly {
         closeTriggers.forEach((trigger) => {
             // For assistive technologies.
             if (this.accessibility) {
-                trigger.setAttribute('aria-label', 'close modal');
+                trigger.setAttribute('aria-label', 'close this dialog');
             }
 
             trigger.addEventListener('click', (event) => {
