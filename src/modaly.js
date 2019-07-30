@@ -57,9 +57,8 @@ export default class Modaly {
         // Bind ESC key with modal closing.
         if (settings.escape) {
             settings.document.addEventListener('keyup', (event) => {
-                if (event.defaultPrevented) return;
-
                 const key = event.key || event.keyCode;
+
                 if (key === 'Escape' || key === 'Esc' || key === 27) {
                     this.hide();
                 }
