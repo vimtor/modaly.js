@@ -10,13 +10,13 @@
         "lint": "eslint \"./**/*.js\"",
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
         "server": "reload -d src --port 5000",
-        "server:open": "reload -b -d src --port 5000",
         "test:run": "cypress run",
         "test:open": "cypress open",
-        "test": "server-test server 5000 test:run",
+        "test": "SET \"NODE_ENV=test\" && server-test server 5000 test:run",
+        "coverage:report:text": "nyc report --reporter=text",
+        "coverage:report:html": "nyc report --reporter=html",
         "build": "rollup -c",
-        "build:watch": "rollup -c --watch",
-        "dev": "run-p server test:open"
+        "dev": "SET \"NODE_ENV=test\" && server-test server 5000 test:open"
     },
     "husky": {
         "hooks": {
@@ -48,15 +48,18 @@
     "devDependencies": {
         "@babel/core": "^7.5.5",
         "@babel/preset-env": "^7.5.5",
+        "@cypress/code-coverage": "^1.8.0",
+        "babel-plugin-istanbul": "^5.2.0",
         "cssnano": "^4.1.10",
-        "cypress": "^3.4.0",
+        "cypress": "^3.4.1",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.2.0",
         "eslint-plugin-cypress": "^2.6.0",
         "eslint-plugin-import": "^2.18.2",
         "husky": "^3.0.1",
+        "istanbul-lib-coverage": "^2.0.5",
         "lint-staged": "^9.2.1",
-        "npm-run-all": "^4.1.5",
+        "nyc": "^14.1.1",
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
         "reload": "^3.0.1",
