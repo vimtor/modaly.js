@@ -11,9 +11,23 @@ describe('modal default options', () => {
         });
     });
 
-    it('closes by pressing the ESC key', () => {
+    it('closes by pressing the Escape key', () => {
         cy.get("[data-modaly-open='#modal']").click();
-        cy.get('body').trigger('keyup', { key: 'Escape' });
+        cy.document().trigger('keyup', { key: 'Escape' });
+
+        cy.get('#modal').should('be.not.visible');
+    });
+
+    it('closes by pressing the Esc key', () => {
+        cy.get("[data-modaly-open='#modal']").click();
+        cy.document().trigger('keyup', { key: 'Esc' });
+
+        cy.get('#modal').should('be.not.visible');
+    });
+
+    it('closes by pressing the escape with key code', () => {
+        cy.get("[data-modaly-open='#modal']").click();
+        cy.document().trigger('keyup', { keyCode: 27, which: 27 });
 
         cy.get('#modal').should('be.not.visible');
     });
@@ -21,6 +35,15 @@ describe('modal default options', () => {
     it('closes by clicking the overlay', () => {
         cy.get("[data-modaly-open='#modal']").click();
         cy.get('#modal').click();
+
+        cy.get('#modal').should('be.not.visible');
+    });
+
+    it('does not closing by pressing any key besides ESC', () => {
+        cy.get("[data-modaly-open='#modal']").click();
+        cy.get('#modal').click();
+
+        cy.document().trigger('keyup', { key: 'Space' });
 
         cy.get('#modal').should('be.not.visible');
     });

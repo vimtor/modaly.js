@@ -4,7 +4,6 @@ import Modaly from '../../src/modaly';
 
 describe('modal callbacks', () => {
     before(() => {
-        cy.setCookie('opened', 'false');
         cy.visit('/').then((contentWindow) => {
             new Modaly('#modal', {
                 onShow: async () => {

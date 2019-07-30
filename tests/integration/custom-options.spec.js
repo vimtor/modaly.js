@@ -19,7 +19,7 @@ describe('modal custom options', () => {
 
     it('does not close by pressing the ESC key', () => {
         cy.get("[data-modaly-open='#modal']").click();
-        cy.get('body').trigger('keyup', { key: 'Escape' });
+        cy.document().trigger('keyup', { key: 'Escape' });
 
         cy.get('#modal').should('be.visible');
     });
