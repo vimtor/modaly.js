@@ -23,3 +23,8 @@ Cypress.Commands.add(
         expect(el).to.have.css(property, value);
     },
 );
+
+Cypress.Commands.add('modal', () => cy.get('#modal'));
+
+Cypress.Commands.add('open', () => cy.get('[data-modaly-open]').click());
+Cypress.Commands.add('close', () => cy.get('#modal > [data-modaly-close]').click());
