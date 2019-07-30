@@ -19,6 +19,8 @@ script:
     - npm run lint
     - npm run build
     - npm test
+    - npm run report:coverage:text
+    - npm run coveralls
 
 notifications:
     email: false

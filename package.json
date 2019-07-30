@@ -15,6 +15,7 @@
         "test": "NODE_ENV=test && server-test server 5000 test:run",
         "coverage:report:text": "nyc report --reporter=text",
         "coverage:report:html": "nyc report --reporter=html",
+        "coveralls": "nyc report --reporter=text-lcov | coveralls",
         "build": "rollup -c",
         "dev": "SET \"NODE_ENV=test\" && server-test server 5000 test:open"
     },
@@ -51,6 +52,7 @@
         "@babel/preset-env": "^7.5.5",
         "@cypress/code-coverage": "^1.8.0",
         "babel-plugin-istanbul": "^5.2.0",
+        "coveralls": "^3.0.5",
         "cssnano": "^4.1.10",
         "cypress": "^3.4.1",
         "eslint": "^5.16.0",
