@@ -1,2 +1,4 @@
 node_modules
 tests/example/*.js
+.nyc_output
+coverage

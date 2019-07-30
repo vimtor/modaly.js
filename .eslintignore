@@ -2,3 +2,5 @@ node_modules
 dist
 tests/example/*.js
 examples
+.nyc_output
+coverage
