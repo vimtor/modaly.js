@@ -12,6 +12,7 @@ export default class Modaly {
                 // Navigation
                 escape: true,
                 overlay: true,
+                accessibility: true,
 
                 // Callbacks
                 onShow: null,
@@ -48,11 +49,19 @@ export default class Modaly {
         // Bind every open trigger.
         const closeTriggers = this.wrapper.querySelectorAll('[data-modaly-close]');
         closeTriggers.forEach(trigger => trigger.addEventListener('click', (event) => {
-            // To prevent overlay for triggering.
+            // To prevent overlay for triggering click.
             event.stopPropagation();
 
             this.hide(trigger);
         }));
+
+        // Add accessibility attributes.
+        this.accessibility = settings.accessibility;
+        if (this.accessibility) {
+            this.wrapper.setAttribute('role', 'dialog');
+            this.wrapper.setAttribute('aria-modal', 'true');
+            this.wrapper.setAttribute('aria-hidden', 'true');
+        }
 
         // Bind ESC key with modal closing.
         if (settings.escape) {
@@ -75,11 +84,15 @@ export default class Modaly {
 
     show(trigger = null) {
         if (this.showCallback) this.showCallback(this.wrapper, trigger);
+        if (this.accessibility) this.wrapper.setAttribute('aria-hidden', 'false');
+
         this.wrapper.classList.remove('modaly-hidden');
     }
 
     hide(trigger = null) {
         if (this.hideCallback) this.hideCallback(this.wrapper, trigger);
+        if (this.accessibility) this.wrapper.setAttribute('aria-hidden', 'true');
+
         this.wrapper.classList.add('modaly-hidden');
     }
 }
