@@ -12,6 +12,7 @@ export default class Modaly {
                 // Navigation
                 escape: true,
                 overlay: true,
+                accessibility: true,
 
                 // Callbacks
                 onShow: null,
@@ -37,6 +38,14 @@ export default class Modaly {
         this.wrapper.style.setProperty('--animation', settings.animation);
         this.wrapper.style.setProperty('--opacity', settings.opacity);
 
+        // Add accessibility attributes.
+        this.accessibility = settings.accessibility;
+        if (this.accessibility) {
+            this.wrapper.setAttribute('role', 'dialog');
+            this.wrapper.setAttribute('aria-modal', 'true');
+            this.wrapper.setAttribute('aria-hidden', 'true');
+        }
+
         // Bind callbacks.
         this.showCallback = settings.onShow;
         this.hideCallback = settings.onHide;
@@ -47,12 +56,19 @@ export default class Modaly {
 
         // Bind every open trigger.
         const closeTriggers = this.wrapper.querySelectorAll('[data-modaly-close]');
-        closeTriggers.forEach(trigger => trigger.addEventListener('click', (event) => {
-            // To prevent overlay for triggering.
-            event.stopPropagation();
+        closeTriggers.forEach((trigger) => {
+            // For assistive technologies.
+            if (this.accessibility) {
+                trigger.setAttribute('aria-label', 'close this dialog');
+            }
 
-            this.hide(trigger);
-        }));
+            trigger.addEventListener('click', (event) => {
+                // To prevent overlay for triggering click.
+                event.stopPropagation();
+
+                this.hide(trigger);
+            });
+        });
 
         // Bind ESC key with modal closing.
         if (settings.escape) {
@@ -75,11 +91,15 @@ export default class Modaly {
 
     show(trigger = null) {
         if (this.showCallback) this.showCallback(this.wrapper, trigger);
+        if (this.accessibility) this.wrapper.setAttribute('aria-hidden', 'false');
+
         this.wrapper.classList.remove('modaly-hidden');
     }
 
     hide(trigger = null) {
         if (this.hideCallback) this.hideCallback(this.wrapper, trigger);
+        if (this.accessibility) this.wrapper.setAttribute('aria-hidden', 'true');
+
         this.wrapper.classList.add('modaly-hidden');
     }
 }

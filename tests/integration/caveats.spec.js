@@ -2,7 +2,7 @@
 
 import Modaly from '../../src/modaly';
 
-describe('modal custom options', () => {
+describe('modal singularities check', () => {
     before(() => {
         cy.visit('/').then((contentWindow) => {
             new Modaly('#modal', {
