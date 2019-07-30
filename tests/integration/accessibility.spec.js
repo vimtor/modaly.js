@@ -32,7 +32,11 @@ describe('modal accesibility defaults', () => {
     });
 
     it("aria-label of modal close trigger equals 'close modal'", () => {
-        cy.get('#modal > [data-modaly-close]').should('have.attr', 'aria-label', 'close modal');
+        cy.get('#modal > [data-modaly-close]').should(
+            'have.attr',
+            'aria-label',
+            'close this dialog',
+        );
     });
 });
 
