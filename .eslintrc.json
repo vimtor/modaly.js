@@ -8,6 +8,7 @@
     "rules": {
         "indent": ["error", 4],
         "no-new": "off",
-        "spaced-comment": "off"
+        "spaced-comment": "off",
+        "linebreak-style": "off"
     }
 }
