@@ -12,7 +12,7 @@
         "server": "reload -d src --port 5000",
         "test:run": "cypress run",
         "test:open": "cypress open",
-        "test": "SET \"NODE_ENV=test\" && server-test server 5000 test:run",
+        "test": "NODE_ENV=test && server-test server 5000 test:run",
         "coverage:report:text": "nyc report --reporter=text",
         "coverage:report:html": "nyc report --reporter=html",
         "build": "rollup -c",
