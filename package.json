@@ -1,6 +1,6 @@
 {
     "name": "modaly.js",
-    "version": "0.3.3",
+    "version": "0.4.0",
     "description": "Tiny and easy javascript library for creating web modals.",
     "main": "dist/modaly.min.js",
     "browser": "dist/modaly.min.js",
@@ -29,8 +29,8 @@
     },
     "lint-staged": {
         "*.js": [
-            "npm run lint",
             "npm run lint:fix",
+            "npm run lint",
             "git add"
         ]
     },
@@ -72,6 +72,7 @@
         "rollup": "^1.17.0",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-bundle-size": "^1.0.3",
+        "rollup-plugin-license": "^0.9.0",
         "rollup-plugin-postcss": "^2.0.3",
         "rollup-plugin-terser": "^5.1.1",
         "start-server-and-test": "^1.9.1"
