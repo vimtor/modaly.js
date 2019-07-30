@@ -44,7 +44,7 @@ describe('modal accesibility off', () => {
     before(() => {
         cy.visit('/').then((contentWindow) => {
             new Modaly('#modal', {
-                accessibility: false,
+                accessible: false,
                 document: contentWindow.document,
             });
         });
