@@ -2,7 +2,7 @@
 
 import Modaly from '../../src/modaly';
 
-describe('modal accesibility setup', () => {
+describe('modal accesibility defaults', () => {
     before(() => {
         cy.visit('/').then((contentWindow) => {
             new Modaly('#modal', { document: contentWindow.document });
@@ -33,5 +33,30 @@ describe('modal accesibility setup', () => {
 
     it("aria-label of modal close trigger equals 'close modal'", () => {
         cy.get('#modal > [data-modaly-close]').should('have.attr', 'aria-label', 'close modal');
+    });
+});
+
+describe('modal accesibility off', () => {
+    before(() => {
+        cy.visit('/').then((contentWindow) => {
+            new Modaly('#modal', {
+                accessibility: false,
+                document: contentWindow.document,
+            });
+        });
+    });
+
+    it('accesibility attributes do not exist', () => {
+        cy.get('#modal').should('not.have.attr', 'role');
+        cy.get('#modal').should('not.have.attr', 'aria-modal');
+        cy.get('#modal').should('not.have.attr', 'aria-hidden');
+    });
+
+    it('aria-hidden is not created by triggers', () => {
+        cy.get('[data-modaly-open]').click();
+        cy.get('#modal').should('not.have.attr', 'aria-hidden');
+
+        cy.get('#modal > [data-modaly-close]').click();
+        cy.get('#modal').should('not.have.attr', 'aria-hidden');
     });
 });
