@@ -1,6 +1,4 @@
-# modaly.js
-
-[![Build Status](https://travis-ci.org/papeloto/modaly.js.svg?branch=master)](https://travis-ci.org/papeloto/modaly.js)
+# modaly.js [![Build Status](https://travis-ci.org/papeloto/modaly.js.svg?branch=master)](https://travis-ci.org/papeloto/modaly.js) [![Coverage Status](https://coveralls.io/repos/github/papeloto/modaly.js/badge.svg?branch=master)](https://coveralls.io/github/papeloto/modaly.js?branch=master)
 
 Tiny and easy javascript library for creating web modals.
 
