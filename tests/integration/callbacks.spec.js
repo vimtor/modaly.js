@@ -19,14 +19,14 @@ describe('modal callbacks', () => {
 
     it('show callback gets fired with the trigger and the modal as parameters', () => {
         cy.setCookie('opened', 'false');
-        cy.get("[data-modaly-open='#modal']").click();
+        cy.open();
 
         cy.getCookie('opened').should('have.property', 'value', 'true');
     });
 
     it('hide callback gets fired with the trigger and the modal as parameters', () => {
         cy.setCookie('closed', 'false');
-        cy.get('#modal > [data-modaly-close]').click();
+        cy.close();
 
         cy.getCookie('closed').should('have.property', 'value', 'true');
     });

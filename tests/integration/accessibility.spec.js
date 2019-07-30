@@ -10,25 +10,25 @@ describe('modal accesibility defaults', () => {
     });
 
     it("role attribute equals 'dialog'", () => {
-        cy.get('#modal').should('have.attr', 'role', 'dialog');
+        cy.modal().should('have.attr', 'role', 'dialog');
     });
 
     it("aria-modal attribute equals 'true'", () => {
-        cy.get('#modal').should('have.attr', 'aria-modal', 'true');
+        cy.modal().should('have.attr', 'aria-modal', 'true');
     });
 
     it("aria-hidden attribute equals 'true' by default", () => {
-        cy.get('#modal').should('have.attr', 'aria-hidden', 'true');
+        cy.modal().should('have.attr', 'aria-hidden', 'true');
     });
 
     it("aria-hidden attribute equals 'false' when opened", () => {
-        cy.get('[data-modaly-open]').click();
-        cy.get('#modal').should('have.attr', 'aria-hidden', 'false');
+        cy.open();
+        cy.modal().should('have.attr', 'aria-hidden', 'false');
     });
 
     it("aria-hidden attribute equals 'true' when closed", () => {
-        cy.get('#modal > [data-modaly-close]').click();
-        cy.get('#modal').should('have.attr', 'aria-hidden', 'true');
+        cy.close();
+        cy.modal().should('have.attr', 'aria-hidden', 'true');
     });
 
     it("aria-label of modal close trigger equals 'close modal'", () => {
@@ -51,16 +51,16 @@ describe('modal accesibility off', () => {
     });
 
     it('accesibility attributes do not exist', () => {
-        cy.get('#modal').should('not.have.attr', 'role');
-        cy.get('#modal').should('not.have.attr', 'aria-modal');
-        cy.get('#modal').should('not.have.attr', 'aria-hidden');
+        cy.modal().should('not.have.attr', 'role');
+        cy.modal().should('not.have.attr', 'aria-modal');
+        cy.modal().should('not.have.attr', 'aria-hidden');
     });
 
     it('aria-hidden is not created by triggers', () => {
-        cy.get('[data-modaly-open]').click();
-        cy.get('#modal').should('not.have.attr', 'aria-hidden');
+        cy.open();
+        cy.modal().should('not.have.attr', 'aria-hidden');
 
-        cy.get('#modal > [data-modaly-close]').click();
-        cy.get('#modal').should('not.have.attr', 'aria-hidden');
+        cy.close();
+        cy.modal().should('not.have.attr', 'aria-hidden');
     });
 });

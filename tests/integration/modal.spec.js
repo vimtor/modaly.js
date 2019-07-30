@@ -2,39 +2,45 @@
 
 import Modaly from '../../src/modaly';
 
-describe('modal user interface default features', () => {
-    let modal;
-
+describe('modal works with default features triggered by the user', () => {
     before(() => {
         cy.visit('/').then((contentWindow) => {
-            modal = new Modaly('#modal', { document: contentWindow.document });
+            new Modaly('#modal', { document: contentWindow.document });
         });
     });
 
     it('is invisible at the start', () => {
-        cy.get('#modal').should('be.not.visible');
+        cy.modal().should('be.not.visible');
     });
 
     it('is visible after clicking the button', () => {
-        cy.get("[data-modaly-open='#modal']").click();
-        cy.get('#modal').should('be.visible');
+        cy.open();
+        cy.modal().should('be.visible');
     });
 
     it('is invisible again after clicking the close button', () => {
-        cy.get('#modal > [data-modaly-close]').click();
+        cy.close();
 
-        cy.get('#modal').should('be.not.visible');
+        cy.modal().should('be.not.visible');
     });
+});
 
+describe('modal works with default features programatically', () => {
     it('opens with show method of modal class', () => {
-        modal.show();
+        cy.visit('/').then((contentWindow) => {
+            const modal = new Modaly('#modal', { document: contentWindow.document });
+            modal.show();
 
-        cy.get('#modal').should('be.visible');
+            cy.modal().should('be.visible');
+        });
     });
 
     it('closes with hide method of modal class', () => {
-        modal.hide();
+        cy.visit('/').then((contentWindow) => {
+            const modal = new Modaly('#modal', { document: contentWindow.document });
+            modal.hide();
 
-        cy.get('#modal').should('be.not.visible');
+            cy.modal().should('be.not.visible');
+        });
     });
 });
