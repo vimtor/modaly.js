@@ -11,3 +11,4 @@ cypress.json
 rollup.config.js
 .nyc_output
 coverage
+examples
