@@ -10,11 +10,7 @@ export default {
         {
             name: 'Modaly',
             file: 'dist/modaly.min.js',
-            format: 'iife',
-        },
-        {
-            file: 'dist/modaly.cjs.js',
-            format: 'cjs',
+            format: 'umd',
         },
         {
             file: 'dist/modaly.esm.js',
