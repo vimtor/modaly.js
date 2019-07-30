@@ -12,15 +12,14 @@
     "scripts": {
         "lint": "eslint \"./**/*.js\"",
         "lint:fix": "prettier-eslint \"src/**/*.js\" --write",
-        "server": "reload -d src --port 5000",
+        "start": "reload -d src --port 5000",
         "test:run": "cypress run",
         "test:open": "cypress open",
-        "test": "cross-env NODE_ENV=test server-test server 5000 test:run",
-        "coverage:report:text": "nyc report --reporter=text",
-        "coverage:report:html": "nyc report --reporter=html",
+        "test": "cross-env NODE_ENV=test server-test start 5000 test:run",
+        "coverage": "nyc report --reporter=text",
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
         "build": "rollup -c",
-        "dev": "cross-env NODE_ENV=test server-test server 5000 test:open"
+        "dev": "cross-env NODE_ENV=test server-test start 5000 test:open"
     },
     "husky": {
         "hooks": {

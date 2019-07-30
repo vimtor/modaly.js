@@ -18,7 +18,7 @@ cache:
 script:
     - npm run lint
     - npm test
-    - npm run coverage:report:text
+    - npm run coveraget
     - npm run coveralls
     - npm run build
 
