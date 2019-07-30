@@ -88,6 +88,11 @@ new Modaly("#modal-custom", {
 ```
 
 <br/>
+<style>
+table {
+    width:100%;
+}
+</style>
 
 | Option     | Default   | Description                                     |
 | ---------- | --------- | ----------------------------------------------- |
