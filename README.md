@@ -95,7 +95,7 @@ new Modaly("#modal-custom", {
 <br/>
 
 | Option     | Default   | Description                                                       |
-| ---------- | --------- | ----------------------------------------------------------------- |
+| :--------- | :-------- | :---------------------------------------------------------------- |
 | background | "black"   | Modal overlay color                                               |
 | opacity    | 0.75      | Modal overlay opacity                                             |
 | duration   | 250       | Milliseconds that the transition lasts                            |
