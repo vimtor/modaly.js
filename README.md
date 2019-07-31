@@ -1,7 +1,11 @@
 # modaly.js [![Build Status](https://travis-ci.org/papeloto/modaly.js.svg?branch=master)](https://travis-ci.org/papeloto/modaly.js) [![Coverage Status](https://coveralls.io/repos/github/papeloto/modaly.js/badge.svg?branch=master)](https://coveralls.io/github/papeloto/modaly.js?branch=master)
 
 Tiny and easy javascript library for creating web modals.
-
+- Easy to use and customize
+- Lightweight **3.19kB** (1.31 kB gzip)
+- Automatic accessibility features
+- Single file with styles injection
+- Highly compatible ([browser list](https://browserl.ist/?q=%3E+0.25%25%2C+not+dead))
 
 
 ## Install
@@ -80,6 +84,7 @@ new Modaly("#modal-custom", {
     // Navigation
     escape: true,
     overlay: true,
+    accesible: true,
 
     // Callbacks
     onShow: (modal, trigger) => {},
@@ -125,7 +130,7 @@ It will change from this.
 </div>
 ```
 
-To this.
+To this. The `aria-hidden` attribute will toggle accordingly to the modal.
 
 ```html
 <div id="modal-1" role="dialog" aria-modal="true" aria-hidden="true">
