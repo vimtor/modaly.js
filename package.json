@@ -19,6 +19,7 @@
         "coverage": "nyc report --reporter=text",
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
         "build": "rollup -c",
+        "build:watch": "rollup -c --watch",
         "dev": "cross-env NODE_ENV=test server-test start 5000 test:open"
     },
     "husky": {
@@ -30,6 +31,7 @@
         "*.js": [
             "npm run lint:fix",
             "npm run lint",
+            "npm test",
             "git add"
         ]
     },
