@@ -1,6 +1,6 @@
 {
     "name": "modaly.js",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Tiny and easy javascript library for creating web modals.",
     "main": "dist/modaly.min.js",
     "browser": "dist/modaly.min.js",
@@ -19,6 +19,7 @@
         "coverage": "nyc report --reporter=text",
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
         "build": "rollup -c",
+        "build:watch": "rollup -c --watch",
         "dev": "cross-env NODE_ENV=test server-test start 5000 test:open"
     },
     "husky": {
@@ -41,7 +42,8 @@
         "web",
         "modal",
         "simple",
-        "lightweight"
+        "lightweight",
+        "accessible"
     ],
     "author": "Victor Navarro",
     "license": "MIT",

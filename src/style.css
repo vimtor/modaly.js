@@ -25,7 +25,5 @@
 
 .modaly-hidden {
     visibility: hidden;
-
-    background-color: black;
     opacity: 0;
 }
