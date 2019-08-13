@@ -20,7 +20,8 @@
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
         "build": "rollup -c",
         "build:watch": "rollup -c --watch",
-        "dev": "cross-env NODE_ENV=test server-test start 5000 test:open"
+        "dev": "cross-env NODE_ENV=test server-test start 5000 test:open",
+        "publish": "np --no-publish --no-tests"
     },
     "husky": {
         "hooks": {
