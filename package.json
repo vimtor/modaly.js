@@ -21,7 +21,7 @@
         "build": "rollup -c",
         "build:watch": "rollup -c --watch",
         "dev": "cross-env NODE_ENV=test server-test start 5000 test:open",
-        "publish": "np --no-publish --no-tests"
+        "publish": "np --no-publish --yolo"
     },
     "husky": {
         "hooks": {
