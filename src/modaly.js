@@ -34,9 +34,15 @@ export default class Modaly {
 
         // Setup style properties.
         this.wrapper.style.setProperty('--background', settings.background);
-        this.wrapper.style.setProperty('--duration', `${settings.duration}ms`);
         this.wrapper.style.setProperty('--animation', settings.animation);
         this.wrapper.style.setProperty('--opacity', settings.opacity);
+
+        // Avoid inital flash
+        this.wrapper.style.setProperty('--duration', '0s');
+        setTimeout(() => {
+            this.wrapper.style.setProperty('--duration', `${settings.duration}ms`);
+            this.wrapper.style.display = 'block';
+        }, settings.duration);
 
         // Add accessibility attributes.
         this.accessible = settings.accessible;
