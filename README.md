@@ -116,7 +116,6 @@ If the initial microsecond where the modal flashes is a problem, you can always 
 </div>
 ```
 
-
 ## Callbacks
 #### `onShow(modal, trigger)`
 Fired when the modal it is about to open.
