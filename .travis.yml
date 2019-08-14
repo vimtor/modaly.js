@@ -25,6 +25,11 @@ script:
 notifications:
     email: false
 
+branches:
+    only:
+        - master
+        - /^v.*$/
+
 deploy:
     provider: npm
     email: vn4varro@gmail.com
