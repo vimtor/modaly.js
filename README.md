@@ -106,6 +106,16 @@ new Modaly("#modal-custom", {
 
 <br/>
 
+If the initial microsecond where the modal flashes is a problem, you can always add the display none attribute.
+
+```html
+<div id="modal-1" style="display: none">
+    <!-- the modal content goes here -->
+
+    <img src="close-icon.svg" data-modaly-close />
+</div>
+```
+
 ## Callbacks
 #### `onShow(modal, trigger)`
 Fired when the modal it is about to open.
