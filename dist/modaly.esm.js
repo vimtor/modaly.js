@@ -1,5 +1,5 @@
 /**
- * modaly.js v0.4.2
+ * modaly.js v0.4.3
  * (c) 2019 Victor Navarro
  * Released under the MIT License.
  */
