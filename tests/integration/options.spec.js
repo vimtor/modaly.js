@@ -67,6 +67,21 @@ describe('modal default options', () => {
     it('animation mode is ease-in', () => {
         cy.modal().css('transition-timing-function', 'ease-in');
     });
+
+    it('lazy loads image with [data-src] attribute', () => {
+        cy.visit('/').then((contentWindow) => {
+            new Modaly('#modal', {
+                document: contentWindow.document,
+            });
+        });
+
+        cy.get('img').should('have.attr', 'data-src');
+        cy.get('img').should('not.have.attr', 'src');
+
+        cy.open();
+
+        cy.get('img').should('have.attr', 'src');
+    });
 });
 
 describe('modal custom options', () => {
@@ -123,6 +138,22 @@ describe('modal custom options', () => {
 
     it('animation mode is ease-out', () => {
         cy.modal().css('transition-timing-function', 'ease-out');
+    });
+
+    it('does not lazy load image with [data-src] attribute', () => {
+        cy.visit('/').then((contentWindow) => {
+            new Modaly('#modal', {
+                lazyLoading: false,
+                document: contentWindow.document,
+            });
+        });
+
+        cy.get('img').should('have.attr', 'data-src');
+        cy.get('img').should('not.have.attr', 'src');
+
+        cy.open();
+
+        cy.get('img').should('not.have.attr', 'src');
     });
 });
 
