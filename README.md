@@ -94,15 +94,16 @@ new Modaly("#modal-custom", {
 
 <br/>
 
-| Option     | Default   | Description                                                       |
-| :--------- | :-------- | :---------------------------------------------------------------- |
-| background | "black"   | Modal overlay color                                               |
-| opacity    | 0.75      | Modal overlay opacity                                             |
-| duration   | 250       | Milliseconds that the transition lasts                            |
-| animation  | "ease-in" | Timing function for the transition                                |
-| escape     | true      | If the modal can be closed using the `ESC` key                    |
-| overlay    | true      | If the modal can be closed clicking the overaly                   |
-| accessible | true      | Setup the modal and triggers to be used by assistive technologies |
+| Option      | Default   | Description                                                        |
+| :---------- | :-------- | :----------------------------------------------------------------- |
+| background  | "black"   | Modal overlay color                                                |
+| opacity     | 0.75      | Modal overlay opacity                                              |
+| duration    | 250       | Milliseconds that the transition lasts                             |
+| animation   | "ease-in" | Timing function for the transition                                 |
+| escape      | true      | If the modal can be closed using the `ESC` key                     |
+| overlay     | true      | If the modal can be closed clicking the overaly                    |
+| accessible  | true      | Setup the modal and triggers to be used by assistive technologies  |
+| lazyLoading | true      | Lazy load the resources inside the modal with `data-src` attribute |
 
 <br/>
 
@@ -126,6 +127,17 @@ Fired when the modal it is about to open.
 Fired when the modal it is about to close.
 - `modal`: the modal DOM element.
 - `trigger`: which DOM element closed the modal. `null` if no DOM element triggered it.
+
+## Lazy Loading
+Since version 0.5.0 you can lazy load the resources inside the modal when it opens. This comes in handy when dealing with image slideshows libraries that do not support this feature.
+
+To use it, as in many other libraries, simple add the `data-src` attribute to the resource you want to lazy load.
+
+<div id="modal-1">
+    <img data-src="your-image.png" />
+</div>
+
+If you use your own lazy loading, you can disable it by setting to `false` the `lazyLoading` options parameter.
 
 ## Accessibility
 If the option `accesible` is `true`, accessibility attributes will be added to the modal and the close triggers automatically.
