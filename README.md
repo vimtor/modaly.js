@@ -16,7 +16,7 @@ npm install modaly.js
 
 CDN
 ```html
-<script src="https://unpkg.com/modaly.js"></script>
+<script src="https://unpkg.com/modaly.js@0.5.0/dist/modaly.min.js"></script>
 ```
 
 Alternatively, you can [download](https://github.com/papeloto/modaly.js/tree/master/dist) distribution files directly.
