@@ -12,7 +12,10 @@ export default class Modaly {
                 // Navigation
                 escape: true,
                 overlay: true,
+
+                // Extras
                 accessible: true,
+                lazyLoading: true,
 
                 // Callbacks
                 onShow: null,
@@ -93,11 +96,24 @@ export default class Modaly {
                 this.hide();
             });
         }
+
+        this.lazyLoading = settings.lazyLoading;
+        if (settings.lazyLoading) {
+            const resources = this.wrapper.querySelectorAll('[data-src]');
+            this.lazyLoad = () => {
+                resources.forEach((resource) => {
+                    resource.setAttribute('src', resource.getAttribute('data-src'));
+                });
+
+                this.lazyLoading = false;
+            };
+        }
     }
 
     show(trigger = null) {
         if (this.showCallback) this.showCallback(this.wrapper, trigger);
         if (this.accessible) this.wrapper.setAttribute('aria-hidden', 'false');
+        if (this.lazyLoading) this.lazyLoad();
 
         this.wrapper.classList.remove('modaly-hidden');
     }
