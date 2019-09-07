@@ -5,7 +5,7 @@ Tiny and easy javascript library for creating web modals.
 - Lightweight **3.19kB** (1.31 kB gzip)
 - Automatic accessibility features
 - Single file with styles injection
-- Highly compatible ([browser list](https://browserl.ist/?q=%3E+0.25%25%2C+not+dead))
+- Highly compatible ([browser list](https://browserl.ist/?q=%3E+0.25%25%2C+not+dead%2C+not+ie+11))
 
 
 ## Install
